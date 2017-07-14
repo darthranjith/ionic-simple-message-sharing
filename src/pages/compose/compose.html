@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Compose</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeComposing()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form novalidate [formGroup]="composeForm" (ngSubmit)="doCompose(composeForm)">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Message</ion-label>
+        <ion-input type="text" formControlName="Message"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button [disabled]="!composeForm.valid" type="submit" ion-button block>Submit</button>
+    </div>
+  </form>
+</ion-content>

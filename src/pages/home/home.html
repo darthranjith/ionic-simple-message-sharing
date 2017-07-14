@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Wall Messages
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="showComposing()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card *ngFor="let post of posts">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/icon/favicon.ico">
+      </ion-avatar>
+      <h2>{{post.User}}</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>{{post.Message}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
