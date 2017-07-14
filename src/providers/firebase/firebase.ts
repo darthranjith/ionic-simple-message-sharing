@@ -33,4 +33,8 @@ export class FirebaseProvider {
     return this.db.list('posts');
   }
 
+  logout() {
+    return this.fireauth.auth.signOut();
+  }
+
 }
